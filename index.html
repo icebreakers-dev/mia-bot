@@ -3,63 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Icebreakers Mia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
   <style>
-    /* Reset and ensure full screen */
+    /* Reset and mobile-friendly layout */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      overflow: hidden;
     }
 
-    /* Background image or color */
-    body {
-      background: url('https://imgur.com/rR04iA8.png') no-repeat center center fixed;
-      background-size: cover;
-      /* Alternatively, use a solid color */
-      /* background-color: #f0f0f0; */
-    }
-
-    /* Logo styling */
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-    }
-
-    .logo img {
-      height: 60px;
-      /* adjust size as needed */
-    }
-
-    /* Make the chatbot fill the viewport */
-    df-messenger {
+    /* Navigation bar at the top */
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chatbot container below navbar */
+    df-messenger {
+      position: fixed;
+      top: 50px; /* adjust based on navbar height */
+      left: 0;
       width: 100%;
-      height: 100%;
-      z-index: 500;
+      height: calc(100% - 50px);
+    }
+
+    /* Optional background image or color */
+    body {
+      background: url('https://imgur.com/rR04iA8.png') no-repeat center center fixed;
+      background-size: cover;
     }
   </style>
 </head>
 <body>
-  <!-- Logo -->
-  <div class="logo">
-    <img src="https://imgur.com/rR04iA8.png" alt="Icebreakers Logo">
+
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <a href="https://www.icebreakerswater.com" target="_blank">Home</a>
+    <a href="https://www.icebreakerswater.com/s/shop" target="_blank">Merch</a>
+    <a href="https://www.icebreakerswater.com/icebreakerstv-roku-app" target="_blank">Icebreakers TV</a>
+    <a href="https://www.icebreakerswater.com/icebreakers-foundation" target="_blank">Foundation</a>
   </div>
 
   <!-- Dialogflow Messenger -->
   <df-messenger
     intent="WELCOME"
-    chat-title="Mia"
+    chat-title="Icebreakers Mia"
     agent-id="50acf8fe-8787-44a8-a3e8-4a9f34eeeaaa"
     language-code="en">
   </df-messenger>
+
 </body>
 </html>
-
