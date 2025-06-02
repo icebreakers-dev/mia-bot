@@ -2,15 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Icebreakers Bot</title>
+  <title>Icebreakers Mia</title>
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <style>
+    /* Reset and ensure full screen */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Background image or color */
+    body {
+      background: url('https://imgur.com/rR04iA8.png') no-repeat center center fixed;
+      background-size: cover;
+      /* Alternatively, use a solid color */
+      /* background-color: #f0f0f0; */
+    }
+
+    /* Logo styling */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+      /* adjust size as needed */
+    }
+
+    /* Make the chatbot fill the viewport */
+    df-messenger {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 500;
+    }
+  </style>
 </head>
 <body>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="https://imgur.com/rR04iA8.png" alt="Icebreakers Logo">
+  </div>
+
+  <!-- Dialogflow Messenger -->
   <df-messenger
     intent="WELCOME"
     chat-title="Mia"
     agent-id="50acf8fe-8787-44a8-a3e8-4a9f34eeeaaa"
-    language-code="en"
-  ></df-messenger>
+    language-code="en">
+  </df-messenger>
 </body>
 </html>
+
